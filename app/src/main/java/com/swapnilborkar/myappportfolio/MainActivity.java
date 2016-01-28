@@ -5,45 +5,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
+public class MainActivity extends AppCompatActivity {
+
+    @Bind(R.id.btnSpotifyStreamer) Button button1;
+    @Bind(R.id.btnScoresApp) Button button2;
+    @Bind(R.id.btnLibraryApp) Button button3;
+    @Bind(R.id.btnBuildItBigger) Button button4;
+    @Bind(R.id.btnXyzReader) Button button5;
+    @Bind(R.id.btnCapstone) Button button6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button btnSpotifyStreamer = (Button) findViewById(R.id.btnSpotifyStreamer);
-        Button btnScoresApp = (Button) findViewById(R.id.btnScoresApp);
-        Button btnLibraryApp = (Button) findViewById(R.id.btnLibraryApp);
-        Button btnBuildItBigger = (Button) findViewById(R.id.btnBuildItBigger);
-        Button btnXyzReader = (Button) findViewById(R.id.btnXyzReader);
-        Button btnCapstone = (Button) findViewById(R.id.btnCapstone);
-
-        btnSpotifyStreamer.setOnClickListener(this);
-        btnScoresApp.setOnClickListener(this);
-        btnLibraryApp.setOnClickListener(this);
-        btnBuildItBigger.setOnClickListener(this);
-        btnXyzReader.setOnClickListener(this);
-        btnCapstone.setOnClickListener(this);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,38 +54,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View v) {
 
-        String message = "This button will launch my ";
-        switch (v.getId())
-        {
-            case R.id.btnSpotifyStreamer:
-                Toast.makeText(this, message+"Spotify Streamer App!", Toast.LENGTH_SHORT).show();
-                break;
-
-            case R.id.btnScoresApp:
-                Toast.makeText(this, message+"Scores App!", Toast.LENGTH_SHORT).show();
-                break;
-
-            case R.id.btnLibraryApp:
-                Toast.makeText(this, message+"Library App!", Toast.LENGTH_SHORT).show();
-                break;
-
-            case  R.id.btnBuildItBigger:
-                Toast.makeText(this, message+"Build It Bigger App!", Toast.LENGTH_SHORT).show();
-                break;
-
-            case R.id.btnXyzReader:
-                Toast.makeText(this, message+"XYZ Reader App!", Toast.LENGTH_SHORT).show();
-                break;
-
-            case R.id.btnCapstone:
-                Toast.makeText(this, message+"Capstone App!", Toast.LENGTH_SHORT).show();
-                break;
-
-        }
-
+    @OnClick({ R.id.btnSpotifyStreamer,
+            R.id.btnScoresApp,
+            R.id.btnLibraryApp,
+            R.id.btnBuildItBigger,
+            R.id.btnXyzReader,
+            R.id.btnCapstone})
+    public void showToast(Button button) {
+        Toast.makeText(this, getString(R.string.button_message) + button.getText(), Toast.LENGTH_SHORT).show();
     }
 }
 

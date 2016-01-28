@@ -1,92 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:showIn="@layout/activity_main">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.swapnilborkar.myappportfolio.MainActivity"
+    tools:showIn="@layout/activity_main"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.swapnilborkar.myappportfolio.MainActivity"
-    tools:showIn="@layout/activity_main">
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <TextView
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title"
-        android:layout_centerHorizontal="true"
-        android:textSize="25sp"/>
+        android:layout_gravity="center"
+        android:textSize="@dimen/title_textsize"/>
 
     <Button
+        android:layout_gravity="center"
         android:id="@+id/btnSpotifyStreamer"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Spotify Streamer"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="16sp"
-        android:layout_below="@id/txtTitle"
-        />
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/button1_title"
+        android:layout_marginTop="@dimen/button_margin"
+        android:textSize="@dimen/button_textsize" />
 
 
     <Button
+        android:layout_gravity="center"
         android:id="@+id/btnScoresApp"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Scores App"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="16sp"
-        android:layout_below="@id/btnSpotifyStreamer"/>
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/button2_title"
+        android:layout_marginTop="@dimen/button_margin"
+        android:textSize="@dimen/button_textsize" />
 
 
     <Button
+        android:layout_gravity="center"
         android:id="@+id/btnLibraryApp"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Library App"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="16sp"
-        android:layout_below="@id/btnScoresApp"/>
-
-
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/button3_title"
+        android:layout_marginTop="@dimen/button_margin"
+        android:textSize="@dimen/button_textsize"/>
 
     <Button
+        android:layout_gravity="center"
         android:id="@+id/btnBuildItBigger"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Build It Bigger"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="16sp"
-        android:layout_below="@id/btnLibraryApp"/>
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/button4_title"
+        android:layout_marginTop="@dimen/button_margin"
+        android:textSize="@dimen/button_textsize"/>
 
 
     <Button
+        android:layout_gravity="center"
         android:id="@+id/btnXyzReader"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="XYZ Reader"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="16sp"
-        android:layout_below="@id/btnBuildItBigger"/>
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/button5_title"
+        android:layout_marginTop="@dimen/button_margin"
+        android:textSize="@dimen/button_textsize"/>
 
 
     <Button
+        android:layout_gravity="center"
         android:id="@+id/btnCapstone"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Capstone: My Own App"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="16sp"
-        android:background="#4CAF50"
-        android:layout_below="@id/btnXyzReader"/>
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/button6_title"
+        android:layout_marginTop="@dimen/button_margin"
+        android:textSize="@dimen/button_textsize"
+        android:background="@color/colorPrimary"
+        android:onClick=""/>
 
 
-</RelativeLayout>
+</LinearLayout>
+</ScrollView>
